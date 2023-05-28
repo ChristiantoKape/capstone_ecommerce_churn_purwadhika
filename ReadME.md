@@ -2,7 +2,7 @@ Capstone Project 3 - E-Commerce Customer Churn
 -------------------------
 Christianto Kurniawan P - JCDSOL-009-010
 
-1. Business Problem Understanding
+Business Problem Understanding
 ------------------------------------------------------------------------------------
 **Context**
 E-commerce customer churn, atau bisa disebut sebagai kehilangan pelanggan dalam bisnis e-commerce, merupakan sebuah fenomena dimana seorang pelangan menghentikan interaksinya dengan sebuah situs atau toko online setelah melakukan transaksi atau melakukan interaksi yang tidak diinginkan dengan situs tersebut. Fenomena ini merupakan masalah yang serius bagi banyak perusahaan e-commerce karena dapat mengurangi pendapatan dan keuntungan mereka. 
@@ -34,7 +34,7 @@ Flase Negative (FN) : pelanggan dianggap tidak churn padahal churn, Konsekuensin
 Berdasarkan konsekuensi tersebut akan dibuat model yang akan mengoptimalkan biaya promosi yang hanya di tujukan ke customer yang memiliki kecenderungan untuk churn dan memutuskan untuk tidak churn. Sehingga, metrics yang cocok digunakan pada model ini adalah **ROC_AUC**
 
 
-2. Data Understanding
+Data Understanding
 ------------------------------------------------------------------------------------
 **Attribute Information**
 | Attribute | Data Type | Description |
@@ -52,7 +52,7 @@ Berdasarkan konsekuensi tersebut akan dibuat model yang akan mengoptimalkan biay
 | Churn | Int | Churn flag |
 
 
-3. Data Cleanng
+Data Cleanng
 ------------------------------------------------------------------------------------
 Kita memiliki missing value pada 194 baris pada kolom Tenure, 169 missing value pada kolom WarehouseToHome, 213 missing value pada kolom DaySinceLastOrder
   1. Menggabungkan Phone dan Mobile Phone menjadi Mobile Phone
@@ -63,7 +63,7 @@ Kita memiliki missing value pada 194 baris pada kolom Tenure, 169 missing value 
       Pada pengisian missing values ini menggunakan metode SimpleImputer(Median)
 
 
-4. Data Analysis
+Data Analysis
 ------------------------------------------------------------------------------------
   1. **Categorical Features**
       Kolom yang termasuk dalam Categorical Features yaitu 'PreferedOrderCat' dan 'MaritalStatus'
@@ -71,7 +71,7 @@ Kita memiliki missing value pada 194 baris pada kolom Tenure, 169 missing value 
       Kolom yang termasuk dalam Numerical Features yaitu 'Tenure', 'WarehouseToHome', 'NumberOfDeviceRegistered', 'SatisfactionScore', 'NumberOfAddress', 'Complain', 'DaySinceLastOrder', 'CashbackAmount'.
 
 
-5. Data Preparation
+Data Preparation
 ------------------------------------------------------------------------------------
   1. **Data Splitting**
       Pada splitting, kita menggunakan 20% test size dan stratify=y. fungsi stratify digunakan untuk memastikan bahwa distribusi kelas dalam variabel target tetap seimbang antara set pelatihan dan pengujian.
@@ -89,7 +89,7 @@ Kita memiliki missing value pada 194 baris pada kolom Tenure, 169 missing value 
       Pada teknik ini, digunakan untuk mencari feature importance pada dataset.
 
 
-6. Conclusion dan Recommendation
+Conclusion dan Recommendation
 ------------------------------------------------------------------------------------
 **Conclusion**
 Berdasarkan hasil classification report dengan metode Machine Learning, XGBoost Classifier. Dapat disimpulkan bahwa model dapat mengetahui 92% customer yang tidak churn dan 77% customer yang churn berdasarkan recall. Dan berdasarkan nilai prediksi, model memiliki kemungkinan customer churn sebesar 64%, sehingga masih ada customer tidak churn dan diprediksi sebagai churn (False Positive Rate) sebesar 7%
